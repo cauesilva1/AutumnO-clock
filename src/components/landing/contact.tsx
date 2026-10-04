@@ -18,7 +18,7 @@ export function Contact() {
 
   return (
     <section id="contato" className="px-16 py-16 max-md:px-4 max-md:py-12">
-      <div className="flex items-end justify-center gap-6 max-md:flex-col max-md:items-stretch">
+      <div className="flex items-stretch justify-center gap-6 max-md:flex-col">
         <div className="flex w-[533px] shrink-0 flex-col gap-6 max-md:w-full">
           <Reveal className="rounded-[32px] border-2 border-orange bg-cream p-6 text-orange">
             <h2 className="text-5xl leading-normal font-black max-md:text-[40px] max-md:leading-[1.05]">Fale comigo</h2>
@@ -38,10 +38,10 @@ export function Contact() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.12} className="w-[898px] shrink-0 max-md:w-full">
+        <Reveal delay={0.12} className="flex w-[898px] shrink-0 max-md:w-full">
           <form
             onSubmit={onSubmit}
-            className="flex h-full flex-col gap-6 rounded-[50px] bg-ink p-8"
+            className="flex min-w-0 flex-1 flex-col gap-6 rounded-[50px] bg-ink p-8"
           >
             <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
               {FIELDS.map((field) => (
