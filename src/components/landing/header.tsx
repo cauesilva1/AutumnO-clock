@@ -34,28 +34,34 @@ export function Header({ menuOpen, onOpen, onClose }: HeaderProps) {
       initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="flex h-[140px] items-center justify-between rounded-[40px] bg-ink px-8 shadow-[0_0_20px_rgba(0,0,0,0.15)] max-md:h-auto max-md:rounded-[28px] max-md:px-5 max-md:py-4"
+      className="flex h-[140px] items-center justify-between rounded-[40px] bg-ink px-16 shadow-[0_0_20px_rgba(0,0,0,0.15)] max-md:h-auto max-md:rounded-[28px] max-md:px-5 max-md:py-4"
     >
       <a
         href="#inicio"
         aria-label="Autumn O'Clock, início"
-        className="flex w-[184px] shrink-0 justify-center max-md:w-auto"
+        className="flex shrink-0 items-center justify-center max-md:w-auto"
       >
-        <LogoMark variant="header" />
+        <span className="block h-[78px] w-[144px] max-md:h-[52px] max-md:w-[96px]">
+          <span className="block origin-top-left [transform:scale(1.5)] max-md:[transform:none]">
+            <LogoMark variant="header" />
+          </span>
+        </span>
       </a>
-      <nav className="flex items-center max-md:hidden" aria-label="Seções">
+      <nav className="flex flex-1 items-center justify-evenly px-8 max-md:hidden" aria-label="Seções">
         {LINKS.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className="rounded-full px-3 py-3 text-base leading-[1.5] whitespace-nowrap text-white transition-colors hover:text-orange"
+            className="rounded-full px-3 py-3 text-xl leading-[1.5] whitespace-nowrap text-white transition-colors hover:text-orange"
           >
             {link.label}
           </a>
         ))}
       </nav>
       <div className="max-md:hidden">
-        <Cta href="#contato">Fale comigo</Cta>
+        <Cta href="#contato" size="lg">
+          Fale comigo
+        </Cta>
       </div>
       <button
         type="button"
